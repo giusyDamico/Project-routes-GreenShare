@@ -1,0 +1,39 @@
+# version: '3'
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: postgres_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: giusy
+    networks:
+      - djangonetwork
+
+  web:
+    build:
+      context: my_django_container
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - djangonetwork
+    environment:
+      - POSTGRES_DB=postgres_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=giusy
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+
+volumes:
+  postgres_data:
+
+networks:
+  djangonetwork:
+      driver: bridge

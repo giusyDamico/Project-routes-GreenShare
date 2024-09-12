@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Routes</title>
+</head>
+<body>
+    <h1>Routes</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Route ID</th>
+                <th>Agency ID</th>
+                <th>Short Name</th>
+                <th>Long Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>URL</th>
+                <th>Color</th>
+                <th>Text Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for route in routes %}
+            <tr>
+                <td>{{ route.route_id }}</td>
+                <td>{{ route.agency_id }}</td>
+                <td>{{ route.route_short_name }}</td>
+                <td>{{ route.route_long_name }}</td>
+                <td>{{ route.route_desc }}</td>
+                <td>{{ route.route_type }}</td>
+                <td>{{ route.route_url }}</td>
+                <td>{{ route.route_color }}</td>
+                <td>{{ route.route_text_color }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9">No routes found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
