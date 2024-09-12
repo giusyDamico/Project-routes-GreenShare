@@ -101,7 +101,10 @@ In the admin.py file, we have configured the admin interface for the Route model
   - **Navigate to the Admin Page**: Open your browser and go to the Django admin URL: http://127.0.0.1:8000/admin/
   - **Log in with Admin Credentials** : Enter the username and password for the admin user.
 
-I have created an user (that have permission only to view, but not modified the routes username='User1' password='Utenteanonimo1!').
+I have created an user (that have permission only to view, but not modified the routes):
+
+             username='User1' 
+             password='Utenteanonimo1!'
 
 ### Manage Route Data:
 Once logged in, you will see a section called "Routes" in the admin panel. Click on it to view, search, filter, and modify route data.
