@@ -46,8 +46,11 @@ In my case i have used port : 5432
 Using Docker-compose.yml , it is not necessary to set in local the PostgreSQL.
 
 ## Steps in order to compose up:
-- **Step 1**: go in the directory where there is *docker-compose.yml* and run on terminal:  'docker-compose up --build'
+- **Step 1**: go in the directory where there is *docker-compose.yml* and run on terminal:  
+              'docker-compose up --build'
+
 - **Step 2**: go in the shell of Django container and do migrations run command: 
+
               ' python manage.py makemigrations app '
               ' python manage.py migrate '   
 
