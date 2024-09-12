@@ -48,24 +48,24 @@ Using Docker-compose.yml , it is not necessary to set in local the PostgreSQL.
 ## Steps in order to compose up:
 - **Step 1**: go in the directory where there is *docker-compose.yml* and run on terminal:  'docker-compose up --build'
 - **Step 2**: go in the shell of Django container and do migrations run command: 
-          ' python manage.py makemigrations app '
-          ' python manage.py migrate '   
+              ' python manage.py makemigrations app '
+              ' python manage.py migrate '   
 
-### Features
+# Features
 
 - **View Routes:** Displays all routes stored in the database.
 - **Upload Routes:** Allows users to upload route files directly.
 - **Import Routes from URL:** Allows users to import route files from a specified URL.
 
-# DATA IMPORT   
+## DATA IMPORT   
 I have implemented three functions in views.py : 
-## View Routes
+### View Routes
 
     Endpoint: /app/view-routes/
     Method: GET
     Description: Displays all routes stored in the database along with a success message from previous operations.
 
-## Upload Routes
+### Upload Routes
 
     Endpoint: /app/upload-routes/
     Method: POST
@@ -75,7 +75,7 @@ I have implemented three functions in views.py :
         .txt file should be named routes.txt.
     Response: Redirects to the /app/view_routes/ page with a success message if the upload and processing are successful.
 
-## Import Routes from URL
+### Import Routes from URL
 
     Endpoint: /app/import-file/
     Method: POST
